@@ -4,12 +4,19 @@ import { nanoid } from '@reduxjs/toolkit';
 import Chain from './components/Chain';
 
 function Chains() {
-    const {
-        data,
-        isSuccess,
-    } = useGetChainsQuery();
-    
-    const chains = data;
+    const { data, isSuccess } = useGetChainsQuery();
+    // exclude invalid chain data and highly centralized chains
+    const chains = data?.filter((c) => {
+        return (
+            c.id !== 'aurora' &&
+            c.id !== 'celo' &&
+            c.id !== 'movr' &&
+            c.id !== 'heco' &&
+            c.id !== 'btt' &&
+            c.id !== 'sbch' &&
+            c.id !== 'okt'
+        )
+    });
     const renderChains = 
     isSuccess ? 
     chains?.map((c) => {
@@ -17,8 +24,6 @@ function Chains() {
             <Chain
                 id={c.id}
                 name={c.name}
-                community_id={c.community_id}
-                native_token_id={c.native_token_id}
                 logo_url={c.logo_url}
                 wrapped_token_id={c.wrapped_token_id}
             />

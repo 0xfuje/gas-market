@@ -1,5 +1,5 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
-import { IChain, ITokenApiArgs } from '../../types';
+import { IChain, IGasMarketChain, ITokenApiArgs } from '../../types';
 import { IToken } from '../../types';
 
 export const apiSlice = createApi({
@@ -14,8 +14,15 @@ export const apiSlice = createApi({
                 const {chainId, tokenId} = props;
                 return `token?chain_id=${chainId}&id=${tokenId}`;
             }
+        }),
+        getGasMarket: builder.query<IGasMarketChain[], string>({
+            query: (chainId) => `https://openapi.debank.com/v1/wallet/gas_market?chain_id=${chainId}`
         })
     })
 })
 
-export const { useGetChainsQuery, useGetTokenQuery } = apiSlice;
+export const { 
+    useGetChainsQuery,
+    useGetTokenQuery,
+    useGetGasMarketQuery
+} = apiSlice;

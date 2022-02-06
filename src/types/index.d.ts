@@ -30,3 +30,10 @@ export interface ITokenApiArgs {
     tokenId: string
 }
 
+export interface IGasMarketChain {
+    level: 'slow' | 'normal' | 'fast' | 'custom',
+    front_tx_count: number,
+    price: number,
+    estimated_seconds: number,
+    base_fee?: number
+}
