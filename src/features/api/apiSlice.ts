@@ -16,7 +16,7 @@ export const apiSlice = createApi({
             }
         }),
         getGasMarket: builder.query<IGasMarketChain[], string>({
-            query: (chainId) => `https://openapi.debank.com/v1/wallet/gas_market?chain_id=${chainId}`
+            query: (chainId) => `/wallet/gas_market?chain_id=${chainId}`
         })
     })
 })

@@ -40,6 +40,6 @@ export interface IGasMarketChain {
 
 export interface IGas {
     level: 'slow' | 'normal' | 'fast' | 'custom',
-    gweiPrice: string,
-    usdPrice: string
+    gweiPrice: number,
+    usdPrice: number
 }

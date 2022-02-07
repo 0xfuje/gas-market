@@ -1,6 +1,8 @@
 import { IChain } from '../types';
 import { useGetTokenQuery, useGetGasMarketQuery } from '../features/api/apiSlice';
 import Gas from './Gas';
+import { nanoid } from '@reduxjs/toolkit';
+import styled from 'styled-components';
 
 function Chain(props: Omit<IChain, "community_id" | "native_token_id">) {
     const { data: tokenData, isSuccess: isTokenQuerySuccess} = 
@@ -8,7 +10,6 @@ function Chain(props: Omit<IChain, "community_id" | "native_token_id">) {
 
     const { data: gasMarketData, isSuccess: isGasMarketQuerySuccess} =
     useGetGasMarketQuery(props.id);
-    
     
 
     const tokenPrice = isTokenQuerySuccess ? tokenData!.price : 0;
@@ -24,20 +25,26 @@ function Chain(props: Omit<IChain, "community_id" | "native_token_id">) {
     const renderGasMarket = isGasMarketQuerySuccess ?
     gasMarketData?.filter((gas) => gas.level !== 'custom')
     .map((gas) => {
-            return <Gas 
+            return <Gas
+                key={nanoid()}
                 level={gas.level}
-                gweiPrice={calcPrices(gas.price)["gwei"].toFixed(3)}
-                usdPrice={calcPrices(gas.price)["usd"].toFixed(3)}
+                gweiPrice={calcPrices(gas.price)["gwei"]}
+                usdPrice={calcPrices(gas.price)["usd"]}
             />
         }) : null
 
-
-
-    
-    return <div className='Chain'>
-        <h2>{props.name}</h2>
-        {renderGasMarket}
-    </div>;
+    return (
+        <StyledChain className='Chain'>
+            <h2>{props.name}</h2>
+            {renderGasMarket}
+        </StyledChain>
+    );
 }
+
+const StyledChain = styled.div`
+    background-color: ${props => props.theme.colors.dark};
+    padding: ${props => props.theme.space.delta};
+    margin-bottom: ${props => props.theme.space.delta};
+`
 
 export default Chain;

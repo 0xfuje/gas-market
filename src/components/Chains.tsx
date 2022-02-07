@@ -1,7 +1,7 @@
 import React from 'react';
-import { useGetChainsQuery } from './features/api/apiSlice';
+import { useGetChainsQuery } from '../features/api/apiSlice';
 import { nanoid } from '@reduxjs/toolkit';
-import Chain from './components/Chain';
+import Chain from './Chain';
 
 function Chains() {
     const { data, isSuccess } = useGetChainsQuery();
@@ -29,7 +29,7 @@ function Chains() {
                 wrapped_token_id={c.wrapped_token_id}
             />
     )})
-    : '';
+    : null;
     return (
     <div className='Chains'>
         {isSuccess ? renderChains : '...loading'}

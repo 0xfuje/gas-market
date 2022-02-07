@@ -1,7 +1,7 @@
 import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-    // CSS RESET
+    // CSS RESET START
     *:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
         all: unset;
         display: revert;
@@ -24,11 +24,17 @@ const GlobalStyle = createGlobalStyle`
         -webkit-line-break: after-white-space;
     }
     :where([draggable="true"]) { -webkit-user-drag: element; }
+    // CSS RESET END
 
-    // STYLING STARTS HERE
+    // DEFAULT STYLING START
     body {
         font-family: 'Montserrat', sans-serif;
+        font-size: 75%;
+        background-color: ${props => props.theme.colors.darkest};
+        color: ${props => props.theme.colors.light};
+        padding: ${props => props.theme.space.gamma}
     }
+    // DEFAULT STYLING END
 `
 
 export default GlobalStyle;
