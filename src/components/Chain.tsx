@@ -55,10 +55,7 @@ const StyledChain = styled.div`
     border: solid 1px ${props => props.theme.colors.dark};
     max-width: 20rem;
     @media screen and (min-width: ${props => props.theme.breakpoints.eta}) {
-        max-width: 22.5rem;
-    }
-    @media screen and (min-width: ${props => props.theme.breakpoints.eta}) {
-        max-width: 25rem;
+        max-width: 21rem;
     }
     .Chain {
         &-header {

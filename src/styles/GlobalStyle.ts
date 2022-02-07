@@ -36,9 +36,9 @@ const GlobalStyle = createGlobalStyle`
         padding: ${props => props.theme.space.gamma};
         font-weight: ${props => props.theme.font.weight.alpha};
         @media screen and (min-width: ${props => props.theme.breakpoints.eta}) {
-            font-size: 87.5%;
+            font-size: 85%;
         }
-        @media screen and (min-width: ${props => props.theme.breakpoints.zeta}) {
+        @media screen and (min-width: ${props => props.theme.breakpoints.delta}) {
             font-size: 100%;
         }
     }

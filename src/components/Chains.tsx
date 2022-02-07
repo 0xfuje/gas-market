@@ -2,6 +2,7 @@ import React from 'react';
 import { useGetChainsQuery } from '../features/api/apiSlice';
 import { nanoid } from '@reduxjs/toolkit';
 import Chain from './Chain';
+import styled from 'styled-components';
 
 function Chains() {
     const { data, isSuccess } = useGetChainsQuery();
@@ -31,11 +32,18 @@ function Chains() {
     )})
     : null;
     return (
-    <div className='Chains'>
+    <StyledChains className='Chains'>
         {isSuccess ? renderChains : '...loading'}
-    </div>
+    </StyledChains>
     );
 }
 
+const StyledChains = styled.div`
+    @media screen and (min-width: ${props => props.theme.breakpoints.epsilon}) {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: repeat(2, 1fr);
+    }
+`
 
 export default Chains;
