@@ -10,8 +10,8 @@ export const apiSlice = createApi({
             query: () => '/chain/list'
         }),
         getToken: builder.query<IToken, ITokenApiArgs>({
-            query: (props) => {
-                const {chainId, tokenId} = props;
+            query: (args) => {
+                const {chainId, tokenId} = args;
                 return `token?chain_id=${chainId}&id=${tokenId}`;
             }
         }),

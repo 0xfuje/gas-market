@@ -1,4 +1,3 @@
-import React from 'react';
 import Chains from './Chains';
 
 function App() {

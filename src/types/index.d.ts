@@ -37,3 +37,9 @@ export interface IGasMarketChain {
     estimated_seconds: number,
     base_fee?: number
 }
+
+export interface IGas {
+    level: 'slow' | 'normal' | 'fast' | 'custom',
+    gweiPrice: string,
+    usdPrice: string
+}

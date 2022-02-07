@@ -22,6 +22,7 @@ function Chains() {
     chains?.map((c) => {
         return (
             <Chain
+                key={nanoid()}
                 id={c.id}
                 name={c.name}
                 logo_url={c.logo_url}
