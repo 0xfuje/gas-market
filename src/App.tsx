@@ -13,6 +13,7 @@ function App() {
 }
 
 const StyledApp = styled.div`
+    margin: 0 auto;
    .App {
        &-title {
            font-size: ${props => props.theme.font.size.alpha};

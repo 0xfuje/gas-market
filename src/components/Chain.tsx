@@ -50,12 +50,14 @@ const StyledChain = styled.div`
     position: relative;
     background: ${props => props.theme.colors.gradient.dark};
     padding: ${props => props.theme.space.delta};
-    margin-bottom: ${props => props.theme.space.delta};
     border-radius: ${props => props.theme.borrad.beta};
     border: solid 1px ${props => props.theme.colors.dark};
-    max-width: 20rem;
+    width: 20rem;
     @media screen and (min-width: ${props => props.theme.breakpoints.eta}) {
-        max-width: 21rem;
+        width: 21.5rem;
+    }
+    @media screen and (min-width: ${props => props.theme.breakpoints.delta}) {
+        width: 25rem;
     }
     .Chain {
         &-header {

@@ -39,11 +39,19 @@ function Chains() {
 }
 
 const StyledChains = styled.div`
+    display: grid;
+    grid-gap: ${props => props.theme.space.epsilon};
+    margin: 0 auto;
     @media screen and (min-width: ${props => props.theme.breakpoints.epsilon}) {
-        display: grid;
         grid-template-rows: auto;
         grid-template-columns: repeat(2, 1fr);
+        max-width: 702px;
     }
+    @media screen and (min-width: ${props => props.theme.breakpoints.delta}) {
+        grid-gap: ${props => props.theme.space.gamma};
+        max-width: 816px;
+    }
+    
 `
 
 export default Chains;
