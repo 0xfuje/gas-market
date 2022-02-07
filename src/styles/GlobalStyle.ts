@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
         -webkit-user-modify: read-write;
         overflow-wrap: break-word;
         -webkit-line-break: after-white-space;
+        line-break: after-white-space;
     }
     :where([draggable="true"]) { -webkit-user-drag: element; }
     // CSS RESET END
@@ -32,7 +33,14 @@ const GlobalStyle = createGlobalStyle`
         font-size: 75%;
         background-color: ${props => props.theme.colors.darkest};
         color: ${props => props.theme.colors.light};
-        padding: ${props => props.theme.space.gamma}
+        padding: ${props => props.theme.space.gamma};
+        font-weight: ${props => props.theme.font.weight.alpha};
+        @media screen and (min-width: ${props => props.theme.breakpoints.eta}) {
+            font-size: 87.5%;
+        }
+        @media screen and (min-width: ${props => props.theme.breakpoints.zeta}) {
+            font-size: 100%;
+        }
     }
     // DEFAULT STYLING END
 `

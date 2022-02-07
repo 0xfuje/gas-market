@@ -30,8 +30,11 @@ export interface ITokenApiArgs {
     tokenId: string
 }
 
+export type IGasLevel = 'slow' | 'normal' | 'fast' | 'custom'; 
+
+export type IGasLevelEmoji = () => '🚲' | '🏍️' |  '🚀' | undefined;
 export interface IGasMarketChain {
-    level: 'slow' | 'normal' | 'fast' | 'custom',
+    level: IGasLevel,
     front_tx_count: number,
     price: number,
     estimated_seconds: number,
@@ -39,7 +42,7 @@ export interface IGasMarketChain {
 }
 
 export interface IGas {
-    level: 'slow' | 'normal' | 'fast' | 'custom',
+    level: IGasLvel,
     gweiPrice: number,
     usdPrice: number
 }

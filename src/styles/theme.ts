@@ -16,8 +16,11 @@ const theme = {
         lightgrey: '#ADB5BD',
         darkgrey: '#6C757D',
         dark: '#212529',
-        darkest: '#0F1113'
-
+        darkest: '#0F1113',
+        gradient: {
+            dark: 'linear-gradient(to bottom right, rgba(52, 58, 64, 0.5), rgba(52, 58, 64, 0))',
+            darkgrey: 'linear-gradient(to bottom right, rgba(52, 58, 64, 1), rgba(52, 58, 64, 0.5))',
+        }
     },
     font: {
         size: {
@@ -26,6 +29,10 @@ const theme = {
             gamma: '0.875em', // 14px
             delta: '0.625em', // 10px
         },
+        weight: {
+            alpha: '500',
+            beta: '300'
+        }
 
     },
     space: {
@@ -36,7 +43,11 @@ const theme = {
         epsilon: '1em',
         zeta: '0.5em',
         eta: '0.25em'
-        
+    },
+    borrad: {
+        alpha: '1em',
+        beta: '0.5em',
+        gamma: '0.25em'
     },
     breakpoints: {
         alpha: '1920px',
