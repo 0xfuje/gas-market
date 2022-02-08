@@ -2,7 +2,7 @@ import { IChain } from '../types';
 import { useGetTokenQuery, useGetGasMarketQuery } from '../features/api/apiSlice';
 import Gas from './Gas';
 import { nanoid } from '@reduxjs/toolkit';
-import styled from 'styled-components';
+import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 
 function Chain(props: Omit<IChain, "community_id" | "native_token_id">) {
     const { data: tokenData, isSuccess: isTokenQuerySuccess} = 
@@ -42,9 +42,12 @@ function Chain(props: Omit<IChain, "community_id" | "native_token_id">) {
             <div className="Chain-gasPrices">
                 {renderGasMarket}
             </div>
+            <img className="Chain-background" src={props.logo_url} />
         </StyledChain>
     );
 }
+
+
 
 const StyledChain = styled.div`
     position: relative;
@@ -65,6 +68,7 @@ const StyledChain = styled.div`
             display: flex;
             align-items: center;
             margin-bottom: ${props => props.theme.space.epsilon};
+            
             &:after {
                 content: '';
                 position: absolute;
@@ -86,6 +90,15 @@ const StyledChain = styled.div`
         &-gasPrices {
             display: flex;
             justify-content: space-between;
+        }
+        &-background {
+            width: 6em;
+            position: absolute;
+            right: 0.5rem;
+            top: 0.5rem;
+            z-index: -2;
+            opacity: 0.2;
+            
         }
     }
 `
