@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useGetChainsQuery } from '../features/api/apiSlice';
 import { nanoid } from '@reduxjs/toolkit';
-import Chain from './Chain';
+import {Chain, ChainLoading} from './Chain';
 import styled from 'styled-components';
 
 function Chains() {
-    const { data, isSuccess } = useGetChainsQuery();
+    const [areChainsLoaded, setAreChainsLoaded] = useState(false);
+    const { data, isLoading, isFetching, isSuccess } = useGetChainsQuery();
+
+    useEffect(() => {
+        if (isLoading || isFetching) setAreChainsLoaded(false);
+        if (isSuccess) setAreChainsLoaded(true);
+    }, [isLoading, isFetching, isSuccess])
+
     // exclude invalid chain data and highly centralized chains
     const chains = data?.filter((c) => {
         return (
@@ -18,8 +25,10 @@ function Chains() {
             c.id !== 'okt'
         )
     });
+
+
     const renderChains = 
-    isSuccess ? 
+    areChainsLoaded ? 
     chains?.map((c) => {
         return (
             <Chain
@@ -33,7 +42,7 @@ function Chains() {
     : null;
     return (
     <StyledChains className='Chains'>
-        {isSuccess ? renderChains : '...loading'}
+        {areChainsLoaded ? renderChains : ''}
     </StyledChains>
     );
 }

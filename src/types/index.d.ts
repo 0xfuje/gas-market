@@ -42,7 +42,8 @@ export interface IGasMarketChain {
 }
 
 export interface IGas {
-    level: IGasLvel,
+    isLoaded: boolean,
+    level: IGasLevel,
     gweiPrice: number,
-    usdPrice: number
+    usdPrice: number,
 }

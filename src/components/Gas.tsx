@@ -1,6 +1,7 @@
 import React from 'react';
 import { IGas, IGasLevel, IGasLevelEmoji } from '../types'
 import styled from 'styled-components';
+import { Spinner } from './Loaders';
 
 function Gas(props: IGas) {
     const precisizePrice = (usd: number) => {
@@ -14,11 +15,12 @@ function Gas(props: IGas) {
         if (props.level === 'normal') return '🏍️';
         if (props.level === 'fast') return '🚀';
     }
-    
-    const gwei = `${props.gweiPrice.toFixed(1)} gwei`;
-    const usd = `${precisizePrice(props.usdPrice)}$`
-    
 
+
+    const gwei = `${props.gweiPrice!.toFixed(1)} gwei`;
+    const usd = `${precisizePrice(props.usdPrice!)}$`
+        
+    
     return (
         <StyledGas className='Gas'>
             <span className="Gas-level">{props.level} {speedEmoji()}</span>
@@ -28,7 +30,15 @@ function Gas(props: IGas) {
     );
 }
 
-const StyledGas = styled.div`
+function GasLoading() {
+    return (
+        <StyledGas className='Gas'>
+            <Spinner />
+        </StyledGas>
+    );
+}
+
+export const StyledGas = styled.div`
     display: flex;
     padding: ${props => props.theme.space.epsilon} ${props => props.theme.space.epsilon};
     flex-direction: column;
@@ -55,4 +65,8 @@ const StyledGas = styled.div`
     }
 `
 
-export default Gas;
+
+
+export default GasLoading;
+
+export { Gas, GasLoading };
