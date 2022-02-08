@@ -18,7 +18,7 @@ const theme = {
         dark: '#212529',
         darkest: '#0F1113',
         gradient: {
-            dark: 'linear-gradient(to bottom right, rgba(52, 58, 64, 0.5), rgba(52, 58, 64, 0))',
+            dark: 'linear-gradient(to bottom right, rgba(52, 58, 64, 0.3), rgba(52, 58, 64, 0))',
             darkgrey: 'linear-gradient(to bottom right, rgba(52, 58, 64, 1), rgba(52, 58, 64, 0.5))',
         }
     },

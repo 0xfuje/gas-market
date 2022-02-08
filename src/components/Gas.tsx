@@ -3,14 +3,21 @@ import { IGas, IGasLevel, IGasLevelEmoji } from '../types'
 import styled from 'styled-components';
 
 function Gas(props: IGas) {
-    const gwei = `${props.gweiPrice.toFixed(1)} gwei`;
-    const usd = `${props.usdPrice.toFixed(3)}$`
+    const precisizePrice = (usd: number) => {
+        if (usd > 1) return usd.toFixed(2);
+        if (usd >= 0.01) return usd.toFixed(3);
+        if (usd < 0.01) return usd.toFixed(4);
+    }
     const speedEmoji: IGasLevelEmoji = () =>  {
         if (props.level === 'custom') return undefined;
         if (props.level === 'slow') return '🚲' ;
         if (props.level === 'normal') return '🏍️';
         if (props.level === 'fast') return '🚀';
     }
+    
+    const gwei = `${props.gweiPrice.toFixed(1)} gwei`;
+    const usd = `${precisizePrice(props.usdPrice)}$`
+    
 
     return (
         <StyledGas className='Gas'>
@@ -26,7 +33,7 @@ const StyledGas = styled.div`
     padding: ${props => props.theme.space.epsilon} ${props => props.theme.space.epsilon};
     flex-direction: column;
     align-items: center;
-    border: 1px solid ${props => props.theme.colors.lightgrey};
+    border: 1px solid ${props => props.theme.colors.darkgrey};
     border-radius: ${props => props.theme.borrad.gamma};
     @media screen and (min-width: ${props => props.theme.breakpoints.eta}) {
         padding: ${props => props.theme.space.epsilon} ${props => props.theme.space.delta}

@@ -77,7 +77,7 @@ const StyledChain = styled.div`
                 left: 0;
                 height: 1px;
                 width: 100%;
-                background-color: ${props => props.theme.colors.lightgrey};
+                background-color: ${props => props.theme.colors.darkgrey};
             }
             &-logo {
                 margin-right: ${props => props.theme.space.zeta};
@@ -98,7 +98,7 @@ const StyledChain = styled.div`
             top: 0.5rem;
             z-index: -2;
             opacity: 0.2;
-            
+            border-radius: ${props => props.theme.borrad.alpha};
         }
     }
 `

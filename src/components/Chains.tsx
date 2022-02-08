@@ -55,6 +55,10 @@ const StyledChains = styled.div`
         grid-template-columns: repeat(3, 1fr);
         max-width: 1248px;
     }
+    @media screen and (min-width: ${props => props.theme.breakpoints.alpha}) {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1672px;
+    }
     
 `
 
