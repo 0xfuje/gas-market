@@ -7,8 +7,7 @@ function Spinner() {
 
 
 const StyledSpinner = styled.div`
-
-  display: inline-block;
+  display: block;
   width: 3.125em;
   height: 3.125em;
   border: ${props => props.theme.space.eta} solid ${props => props.theme.colors.darkgrey};

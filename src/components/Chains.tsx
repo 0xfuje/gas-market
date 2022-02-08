@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useGetChainsQuery } from '../features/api/apiSlice';
 import { nanoid } from '@reduxjs/toolkit';
-import {Chain, ChainLoading} from './Chain';
+import {Chain } from './Chain';
 import styled from 'styled-components';
+import { Spinner } from './Loaders';
 
 function Chains() {
     const [areChainsLoaded, setAreChainsLoaded] = useState(false);
@@ -42,7 +43,7 @@ function Chains() {
     : null;
     return (
     <StyledChains className='Chains'>
-        {areChainsLoaded ? renderChains : ''}
+        {areChainsLoaded ? renderChains : <h2 className='Chains-loading'>Loading gas prices...</h2>}
     </StyledChains>
     );
 }
@@ -51,6 +52,11 @@ const StyledChains = styled.div`
     display: grid;
     grid-gap: ${props => props.theme.space.epsilon};
     margin: 0 auto;
+    .Chains {
+        &-loading {
+            font-size: ${props => props.theme.font.size.alpha};
+        }
+    }
     @media screen and (min-width: ${props => props.theme.breakpoints.epsilon}) {
         grid-template-rows: auto;
         grid-template-columns: repeat(2, 1fr);

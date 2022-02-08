@@ -76,11 +76,11 @@ function Chain(props: Omit<IChain, "community_id" | "native_token_id">) {
     );
 }
 
-function ChainLoading() {
+/* function ChainLoading() {
     return (
         <StyledChainLoading className='ChainLoading'/>
     )
-}
+} */
 
 const StyledChain = styled.div`
     position: relative;
@@ -136,7 +136,7 @@ const StyledChain = styled.div`
     }
 `
 
-const StyledChainLoading = styled.div`
+/* const StyledChainLoading = styled.div`
     height: 11.375em;
     background: ${props => props.theme.colors.gradient.dark};
     border-radius: ${props => props.theme.borrad.beta};
@@ -148,6 +148,6 @@ const StyledChainLoading = styled.div`
     @media screen and (min-width: ${props => props.theme.breakpoints.delta}) {
         width: 25rem;
     }
-`
+` */
 
-export {Chain, ChainLoading};
+export { Chain };
