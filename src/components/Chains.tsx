@@ -48,8 +48,12 @@ const StyledChains = styled.div`
         max-width: 702px;
     }
     @media screen and (min-width: ${props => props.theme.breakpoints.delta}) {
-        grid-gap: ${props => props.theme.space.gamma};
-        max-width: 816px;
+        grid-gap: ${props => props.theme.space.delta};
+        max-width: 824px;
+    }
+    @media screen and (min-width: ${props => props.theme.breakpoints.beta}) {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1248px;
     }
     
 `
