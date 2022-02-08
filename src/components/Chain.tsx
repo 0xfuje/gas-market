@@ -71,7 +71,7 @@ function Chain(props: Omit<IChain, "community_id" | "native_token_id">) {
             <div className="Chain-gasPrices">
                 {renderGasMarket}
             </div>
-            <img className="Chain-backgroundImg" src={props.logo_url} />
+            <img className="Chain-backgroundImg" src={props.logo_url} alt={`${props.name} background logo`} />
         </StyledChain>
     );
 }

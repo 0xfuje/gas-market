@@ -3,7 +3,6 @@ import { useGetChainsQuery } from '../features/api/apiSlice';
 import { nanoid } from '@reduxjs/toolkit';
 import {Chain } from './Chain';
 import styled from 'styled-components';
-import { Spinner } from './Loaders';
 
 function Chains() {
     const [areChainsLoaded, setAreChainsLoaded] = useState(false);

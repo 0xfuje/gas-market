@@ -1,4 +1,3 @@
-import { DefaultTheme } from "styled-components";
 // Size naming convention is based on the greek alphabet
 // From largest to smallest:
 // alpha - A

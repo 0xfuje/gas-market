@@ -1,5 +1,5 @@
 import React from 'react';
-import { IGas, IGasLevel, IGasLevelEmoji } from '../types'
+import { IGas, IGasLevelEmoji } from '../types'
 import styled from 'styled-components';
 import { Spinner } from './Loaders';
 
