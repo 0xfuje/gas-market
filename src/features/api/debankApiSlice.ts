@@ -2,7 +2,7 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 import { IChain, IGasMarketChain, ITokenApiArgs } from '../../types';
 import { IToken } from '../../types';
 
-export const apiSlice = createApi({
+export const debankApiSlice = createApi({
     reducerPath: 'api',
     baseQuery: fetchBaseQuery({ baseUrl: 'https://openapi.debank.com/v1'}),
     endpoints: (builder) => ({
@@ -25,4 +25,4 @@ export const {
     useGetChainsQuery,
     useGetTokenQuery,
     useGetGasMarketQuery
-} = apiSlice;
+} = debankApiSlice;

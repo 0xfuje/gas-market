@@ -31,6 +31,14 @@ function Gas(props: IGas) {
     );
 }
 
+function GasSingleData() {
+    return (
+        <StyledGas className='Gas'>
+            
+        </StyledGas>
+    )
+}
+
 function GasLoading() {
     return (
         <StyledGas className='Gas'>

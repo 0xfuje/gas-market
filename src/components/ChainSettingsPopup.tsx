@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGetChainsQuery } from '../features/api/apiSlice';
+import { useGetChainsQuery } from '../features/api/debankApiSlice';
 
 
 

@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import { IChain } from '../types';
-import { useGetTokenQuery, useGetGasMarketQuery } from '../features/api/apiSlice';
+import { useGetTokenQuery, useGetGasMarketQuery } from '../features/api/debankApiSlice';
 import { Gas, GasLoading } from './Gas';
 import { nanoid } from '@reduxjs/toolkit';
 import styled from 'styled-components';

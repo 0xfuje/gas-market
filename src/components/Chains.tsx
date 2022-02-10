@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useGetChainsQuery } from '../features/api/apiSlice';
+import { useGetChainsQuery } from '../features/api/debankApiSlice';
 import { nanoid } from '@reduxjs/toolkit';
 import {Chain } from './Chain';
 import styled from 'styled-components';
@@ -22,7 +22,7 @@ function Chains() {
             c.id !== 'heco' &&
             c.id !== 'btt' &&
             c.id !== 'sbch' &&
-            c.id !== 'okt'
+            c.id !== 'okt' 
         )
     });
 
