@@ -38,8 +38,10 @@ function Chain(props: Omit<IChain, "community_id" | "native_token_id">) {
 
     const calcPrices = (wei: number) => {
         let gwei = wei / (10 * 10**8);
+        // fix inacurrate prices from Debank API
         if (props.id === 'op') gwei = wei / (10 * 10**5);
-        const eth = gwei / (10 * 10**8);
+        if (props.id === 'eth') gwei = wei / (10 * 10**9);
+        const eth = gwei / (10 * 10**7);
         const usd = (eth * tokenPrice) * 21000;
         return { gwei, usd }
     }

@@ -7,7 +7,8 @@ function Gas(props: IGas) {
     const precisizePrice = (usd: number) => {
         if (usd > 1) return usd.toFixed(2);
         if (usd >= 0.01) return usd.toFixed(3);
-        if (usd < 0.01) return usd.toFixed(4);
+        if (usd > 0.001) return usd.toFixed(4);
+        if (usd <= 0.001) return usd.toFixed(5);
     }
     const speedEmoji: IGasLevelEmoji = () =>  {
         if (props.level === 'custom') return undefined;
@@ -56,7 +57,7 @@ export const StyledGas = styled.div`
             margin-bottom: ${props => props.theme.space.zeta};
         }
         &-usdPrice {
-
+            font-size: 1em;
         }
         &-gweiPrice {
             font-size: ${props => props.theme.font.size.delta};
