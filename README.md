@@ -24,3 +24,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Built with Debank OpenAPI, Typescript and Styled Components.
 
+IPFS Host: https://gateway.pinata.cloud/ipfs/QmdKuV2uXUByKcN7eYkHWve7o9UT5QquWf5p7UVpgGkSvr/
+Netlify Host: https://nifty-sinoussi-76e68f.netlify.app/
