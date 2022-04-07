@@ -7,13 +7,15 @@ import styled from 'styled-components';
 function Chains() {
     const [areChainsLoaded, setAreChainsLoaded] = useState(false);
     const { data, isLoading, isFetching, isSuccess } = useGetChainsQuery();
+    
+    console.log(data)
 
     useEffect(() => {
         if (isLoading || isFetching) setAreChainsLoaded(false);
         if (isSuccess) setAreChainsLoaded(true);
     }, [isLoading, isFetching, isSuccess])
 
-    // exclude invalid chain data and highly centralized chains
+    // exclude chains so the page isn't crowded
     const chains = data?.filter((c) => {
         return (
             c.id !== 'aurora' &&
@@ -22,7 +24,12 @@ function Chains() {
             c.id !== 'heco' &&
             c.id !== 'btt' &&
             c.id !== 'sbch' &&
-            c.id !== 'okt' 
+            c.id !== 'okt' &&
+            c.id !== 'fuse'&&
+            c.id !== 'sdn' &&
+            c.id !== 'astar' &&
+            c.id !== 'palm' &&
+            c.id !== 'boba'
         )
     });
 

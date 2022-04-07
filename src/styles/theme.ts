@@ -15,7 +15,7 @@ const theme = {
         lightgrey: '#ADB5BD',
         darkgrey: '#6C757D',
         dark: '#212529',
-        darkest: '#0F1113',
+        darkest: '#171A1C',
         gradient: {
             dark: 'linear-gradient(to bottom right, rgba(52, 58, 64, 0.3), rgba(52, 58, 64, 0))',
             darkgrey: 'linear-gradient(to bottom right, rgba(52, 58, 64, 1), rgba(52, 58, 64, 0.5))',

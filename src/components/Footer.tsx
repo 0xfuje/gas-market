@@ -4,7 +4,7 @@ import styled from 'styled-components';
 function Footer() {
     return (
         <StyledFooter className='Footer'>
-            <p>Built by <a className='Footer-link' href='https://github.com/web3wolf'>web3wolf</a> with Debank OpenAPI, Typescript, React, Redux Toolkit and Styled Components</p>
+            <p>© {new Date().getFullYear()} Gas Market. Built by <a className='Footer-link' href='https://github.com/0xfuje'>0xfuje</a></p>
         </StyledFooter>
     )
 };

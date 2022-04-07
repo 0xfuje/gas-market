@@ -24,7 +24,7 @@ function Gas(props: IGas) {
     
     return (
         <StyledGas className='Gas'>
-            <span className="Gas-level">{props.level} {speedEmoji()}</span>
+            <span className="Gas-level">{props.level}&nbsp;{speedEmoji()}</span>
             <span className="Gas-usdPrice">{usd}</span>
             <span className="Gas-gweiPrice">{gwei}</span>
         </StyledGas>
