@@ -15,7 +15,7 @@ Available chains:
 • Metis
 • Moonbeam
 
-![alt text](https://github.com/0xfuje/gas-market/blob/main/public/gasmarket.png)
+![alt text](https://github.com/0xfuje/gas-market/blob/major/public/gasmarket.png)
 ## Check out app on localhost
 
 `npm start`
